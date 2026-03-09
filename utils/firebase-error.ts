@@ -20,14 +20,14 @@ const mensagensPorCodigo: Record<string, string> = {
 export function tratarErroFirebase(erro: unknown): ErroTratado {
   if (erro instanceof FirebaseError) {
     return {
-      amigavel: mensagensPorCodigo[erro.code] ?? 'Não foi possível concluir a operação.',
+      amigavel: mensagensPorCodigo[erro.code] ?? 'Não foi possível concluir a autenticação do usuario.',
       bruto: `${erro.code}: ${erro.message}`,
     };
   }
 
   if (erro instanceof Error) {
     return {
-      amigavel: 'Não foi possível concluir a operação.',
+      amigavel: 'erro inesperado.',
       bruto: erro.message,
     };
   }

@@ -4,7 +4,7 @@ import { auth, firebaseConfigError } from '@/config/firebase';
 
 function obterAuthConfigurado(): Auth {
   if (!auth) {
-    throw new Error(firebaseConfigError ?? 'Firebase não configurado.');
+    throw new Error(firebaseConfigError ?? 'Firebase sem configuração.');
   }
 
   return auth;
